@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers configuration for Aftrbuy Landing Page
+  "name": "um-anniversary",
+  "compatibility_date": "2025-01-07",
+  "assets": {
+    // SPA routing - serves index.html for all unmatched routes
+    // This enables React Router client-side routing to work properly
+    "not_found_handling": "single-page-application",
+  },
+}
