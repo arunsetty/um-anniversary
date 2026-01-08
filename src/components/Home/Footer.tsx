@@ -55,7 +55,7 @@ const Footer = () => {
         >
           <div className="glass-romantic px-8 py-4 rounded-full">
             <span className="font-display text-xl md:text-2xl font-semibold text-gold-gradient">
-              4 Years of Beautiful Love
+              2 Years of Beautiful Love
             </span>
           </div>
         </motion.div>
@@ -98,7 +98,7 @@ const Footer = () => {
           className="mb-8"
         >
           <span className="font-modern text-sm tracking-[0.3em] uppercase text-[#D4AF37]">
-            Est. {currentYear - 4}
+            Est. {currentYear - 2}
           </span>
         </motion.div>
 
@@ -132,7 +132,7 @@ const Footer = () => {
           transition={{ delay: 0.6 }}
           className="font-modern text-xs tracking-wider text-[#8B2252]/60"
         >
-          Made with 💖 as a gift for Udit & Simran's 4th Anniversary
+          Made with 💖 as a gift for Udit & Simran's 2nd Anniversary
         </motion.p>
 
         {/* Final Message */}

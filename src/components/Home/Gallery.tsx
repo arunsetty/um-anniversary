@@ -210,18 +210,6 @@ const Gallery = () => {
         ))}
       </motion.div>
 
-      {/* Bottom Quote */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-center mt-20 relative z-10"
-      >
-        <p className="font-elegant text-2xl md:text-3xl text-[#722F37] italic max-w-3xl mx-auto">
-          "Every moment with you is a memory I treasure forever"
-        </p>
-      </motion.div>
     </motion.section>
   );
 };

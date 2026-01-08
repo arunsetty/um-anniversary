@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 interface Milestone {
-  year: string;
+  label: string;
   title: string;
   description: string;
   icon: string;
@@ -10,28 +10,34 @@ interface Milestone {
 
 const milestones: Milestone[] = [
   {
-    year: 'Year 1',
-    title: 'The Beginning',
-    description: 'Two hearts found each other, and your beautiful journey began. The first sparks of love ignited a flame that burns eternally.',
+    label: 'Where It Began',
+    title: 'The Wedding Day',
+    description: 'The day two souls became one. A promise made, a journey started, and a love story written in the stars forever.',
+    icon: '💒',
+  },
+  {
+    label: 'Today',
+    title: '2 Years of Love',
+    description: 'Two beautiful years of laughter, growth, and unconditional love. Every moment together has been a blessing.',
+    icon: '💕',
+  },
+  {
+    label: 'Tomorrow',
+    title: 'Dreams & Adventures',
+    description: 'A lifetime of adventures awaits — new places to explore, dreams to chase, and memories yet to be made together.',
+    icon: '🌟',
+  },
+  {
+    label: 'Forever',
+    title: 'Building Your Home',
+    description: 'A family to nurture, a home filled with love, and a legacy of happiness to pass on through generations.',
+    icon: '🏡',
+  },
+  {
+    label: '∞ Infinity',
+    title: 'Eternal Love',
+    description: 'Beyond time, beyond forever — your love transcends all boundaries. Two hearts beating as one, for all eternity.',
     icon: '💫',
-  },
-  {
-    year: 'Year 2',
-    title: 'Growing Together',
-    description: 'Through every challenge and celebration, your bond grew stronger. Learning, laughing, and loving each day more than the last.',
-    icon: '🌹',
-  },
-  {
-    year: 'Year 3',
-    title: 'Deepening Love',
-    description: 'Your love matured like fine wine, becoming richer and more beautiful with each passing moment.',
-    icon: '💝',
-  },
-  {
-    year: 'Year 4',
-    title: 'Forever Begins',
-    description: 'Four years of memories, adventures, and unconditional love. This is just the beginning of your forever story.',
-    icon: '✨',
   },
 ];
 
@@ -81,10 +87,10 @@ const LoveStory = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Your Journey
+          From Here To Eternity
         </motion.span>
         <h2 className="font-script text-5xl md:text-7xl text-[#8B2252] mt-4 mb-6">
-          Your Love Story
+          Your Forever Journey
         </h2>
         <div className="ornament-divider max-w-md mx-auto">
           <motion.span
@@ -147,7 +153,7 @@ const LoveStory = () => {
                   className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white text-sm font-modern tracking-wider mb-4"
                   whileHover={{ scale: 1.05 }}
                 >
-                  {milestone.year}
+                  {milestone.label}
                 </motion.span>
                 <h3 className="font-display text-2xl md:text-3xl font-bold text-[#8B2252] mb-3">
                   {milestone.title}
@@ -185,7 +191,7 @@ const LoveStory = () => {
           className="inline-block"
         >
           <span className="font-script text-4xl md:text-5xl text-[#D4AF37]">
-            And the story continues...
+            Together, Forever, To Infinity... ∞
           </span>
         </motion.div>
       </motion.div>

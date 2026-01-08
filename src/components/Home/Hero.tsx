@@ -113,7 +113,7 @@ const Hero = () => {
           variants={itemVariants}
           className="font-modern text-sm md:text-base tracking-[0.3em] uppercase text-[#8B2252] mb-4"
         >
-          Celebrating Four Beautiful Years
+          Celebrating Two Beautiful Years
         </motion.p>
 
         {/* Main Names */}
@@ -163,7 +163,7 @@ const Hero = () => {
             }}
           >
             <span className="font-display text-2xl md:text-4xl font-bold text-gold-gradient">
-              4th Anniversary
+              2nd Anniversary
             </span>
           </motion.div>
         </motion.div>
@@ -173,7 +173,7 @@ const Hero = () => {
           variants={itemVariants}
           className="font-elegant text-xl md:text-2xl lg:text-3xl text-[#722F37] max-w-3xl mx-auto leading-relaxed italic"
         >
-          "Four years of love, laughter, and beautiful memories together.
+          "Two years of love, laughter, and beautiful memories together.
           <br />
           Here's to your forever and always."
         </motion.p>

@@ -3,13 +3,13 @@ import { useRef, useState, useEffect } from 'react';
 
 const letterContent = `Dear Udit & Simran,
 
-Four years ago, your story began — a story that has only grown more beautiful with each passing day. Watching your love blossom has been a joy, and seeing how you light up around each other is truly magical.
+Two years ago, your story began — a story that has only grown more beautiful with each passing day. Watching your love blossom has been a joy, and seeing how you light up around each other is truly magical.
 
 Through laughter and tears, through challenges and triumphs, your love has remained a constant inspiration. You two are best friends, confidants, and partners in everything — the perfect match.
 
 Here's to you both — to the memories you've made and the countless more waiting to unfold. May your love continue to grow stronger with each passing year.
 
-Happy 4th Anniversary!
+Happy 2nd Anniversary!
 With Love & Warm Wishes ♥`;
 
 const LoveLetter = () => {

@@ -16,7 +16,7 @@ const wishes: Wish[] = [
   },
   {
     id: 2,
-    message: 'Four years down, forever to go. Your love story inspires everyone around you.',
+    message: 'Two years down, forever to go. Your love story inspires everyone around you.',
     author: 'With Love',
     color: 'from-[#D4AF37] to-[#B8860B]',
   },
@@ -40,7 +40,7 @@ const wishes: Wish[] = [
   },
   {
     id: 6,
-    message: 'Here\'s to the couple who proves that soulmates do exist. Happy 4th Anniversary!',
+    message: 'Here\'s to the couple who proves that soulmates do exist. Happy 2nd Anniversary!',
     author: 'Fate',
     color: 'from-[#E6E6FA] to-[#DA70D6]',
   },
