@@ -1,26 +1,45 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 
-const letterContent = `Dear Udit & Simran,
+const letterContent = `i carry your heart with me (i carry it in
+my heart) i am never without it (anywhere
+i go you go, my dear; and whatever is done
+by only me is your doing, my darling)
 
-Two years ago, your story began — a story that has only grown more beautiful with each passing day. Watching your love blossom has been a joy, and seeing how you light up around each other is truly magical.
+i fear no fate (for you are my fate, my sweet)
+i want no world (for beautiful you are my world, my true)
+and it's you are whatever a moon has always meant
+and whatever a sun will always sing is you
 
-Through laughter and tears, through challenges and triumphs, your love has remained a constant inspiration. You two are best friends, confidants, and partners in everything — the perfect match.
+here is the deepest secret nobody knows
+(here is the root of the root and the bud of the bud
+and the sky of the sky of a tree called life; which grows
+higher than soul can hope or mind can hide)
+and this is the wonder that's keeping the stars apart
 
-Here's to you both — to the memories you've made and the countless more waiting to unfold. May your love continue to grow stronger with each passing year.
+i carry your heart (i carry it in my heart)
 
-Happy 2nd Anniversary!
-With Love & Warm Wishes ♥`;
+- e.e. cummings`;
 
 const LoveLetter = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
   const [displayedText, setDisplayedText] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
+  const hasStartedTyping = useRef(false);
+
+  // Memoize petal positions to prevent flickering during typing
+  const petals = useMemo(() =>
+    [...Array(8)].map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      xOffset: Math.random() * 100 - 50,
+      rotateDir: Math.random() > 0.5 ? 1 : -1,
+      duration: 15 + Math.random() * 10,
+    })), []);
 
   useEffect(() => {
-    if (isInView && !isTyping) {
-      setIsTyping(true);
+    if (isInView && !hasStartedTyping.current) {
+      hasStartedTyping.current = true;
       let index = 0;
       const interval = setInterval(() => {
         if (index < letterContent.length) {
@@ -33,7 +52,7 @@ const LoveLetter = () => {
 
       return () => clearInterval(interval);
     }
-  }, [isInView, isTyping]);
+  }, [isInView]);
 
   return (
     <motion.section
@@ -80,10 +99,10 @@ const LoveLetter = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          From the Heart
+          Words of Love
         </motion.span>
         <h2 className="font-script text-5xl md:text-7xl text-[#8B2252] mt-4 mb-6">
-          A Love Letter
+          Udit & Simran Forever
         </h2>
         <div className="ornament-divider max-w-md mx-auto">
           <motion.span
@@ -136,7 +155,7 @@ const LoveLetter = () => {
             {/* Letter Content */}
             <div className="mt-8 font-elegant text-lg md:text-xl leading-relaxed text-[#722F37] whitespace-pre-line min-h-[400px]">
               {displayedText}
-              {isTyping && displayedText.length < letterContent.length && (
+              {displayedText.length > 0 && displayedText.length < letterContent.length && (
                 <motion.span
                   className="inline-block w-0.5 h-6 bg-[#8B2252] ml-1"
                   animate={{ opacity: [1, 0, 1] }}
@@ -153,20 +172,15 @@ const LoveLetter = () => {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="mt-8 flex justify-center"
               >
-                <div className="text-center">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="text-4xl mb-2"
-                  >
-                    🎉
-                  </motion.div>
-                  <span className="font-script text-3xl text-[#D4AF37]">
-                    Happy Anniversary!
-                  </span>
-                </div>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="text-4xl"
+                >
+                  💕
+                </motion.div>
               </motion.div>
             )}
           </motion.div>
@@ -175,22 +189,22 @@ const LoveLetter = () => {
 
       {/* Floating Petals */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(8)].map((_, i) => (
+        {petals.map((petal) => (
           <motion.div
-            key={i}
+            key={petal.id}
             className="absolute text-2xl opacity-40"
             style={{
-              left: `${Math.random() * 100}%`,
+              left: `${petal.left}%`,
               top: '-10%',
             }}
             animate={{
               y: ['0vh', '120vh'],
-              x: [0, Math.random() * 100 - 50],
-              rotate: [0, 360 * (Math.random() > 0.5 ? 1 : -1)],
+              x: [0, petal.xOffset],
+              rotate: [0, 360 * petal.rotateDir],
             }}
             transition={{
-              duration: 15 + Math.random() * 10,
-              delay: i * 2,
+              duration: petal.duration,
+              delay: petal.id * 2,
               repeat: Infinity,
               ease: 'linear',
             }}

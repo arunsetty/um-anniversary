@@ -24,7 +24,7 @@ const milestones: Milestone[] = [
   {
     label: 'Tomorrow',
     title: 'Dreams & Adventures',
-    description: 'A lifetime of adventures awaits — new places to explore, dreams to chase, and memories yet to be made together.',
+    description: 'A lifetime of adventures awaits. New places to explore, dreams to chase, and memories yet to be made together.',
     icon: '🌟',
   },
   {
@@ -36,7 +36,7 @@ const milestones: Milestone[] = [
   {
     label: '∞ Infinity',
     title: 'Eternal Love',
-    description: 'Beyond time, beyond forever — your love transcends all boundaries. Two hearts beating as one, for all eternity.',
+    description: 'Beyond time, beyond forever. Your love transcends all boundaries. Two hearts beating as one, for all eternity.',
     icon: '💫',
   },
 ];

@@ -194,7 +194,7 @@ const Wishes = () => {
                   <span className="text-white text-lg">✦</span>
                 </motion.div>
                 <span className="font-modern text-sm tracking-wider text-[#D4AF37]">
-                  — {wish.author}
+                  - {wish.author}
                 </span>
               </div>
 
